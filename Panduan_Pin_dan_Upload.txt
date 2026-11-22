@@ -1,0 +1,28 @@
+=== PANDUAN SMART PARKING (ARDUINO UNO + ESP-12E) ===
+
+1. ISI FOLDER:
+   - SmartParking_ArduinoUno/SmartParking_ArduinoUno.ino
+     Upload ke board: Arduino Uno
+     (Sudah termasuk perbaikan servo anti-kejang dengan detach)
+
+   - SmartParking_ESP12E/SmartParking_ESP12E.ino
+     Upload ke board: NodeMCU 1.0 (ESP-12E Module)
+     Serial Monitor: 115200 baud
+     Wi-Fi default di kode: SSID "Galaxy", Password "opo?????"
+
+2. DAFTAR PIN ARDUINO UNO:
+   - Sensor Suara (KY-038) DO  -> Pin 2
+   - Sensor Api (IR Flame) DO  -> Pin 3
+   - LED Merah (R)             -> Pin 4
+   - LED Kuning (Y)            -> Pin 5
+   - LED Hijau (G)             -> Pin 6
+   - Sensor Jarak HC-SR04 TRIG -> Pin 9
+   - Sensor Jarak HC-SR04 ECHO -> Pin 10
+   - Servo SG90 Signal (Oranye)-> Pin 11
+   - Komunikasi ke ESP-12E TX  -> Pin 13 (ke Pin D6 ESP-12E)
+
+3. PENGKABELAN DAYA:
+   - Sensor (Jarak, Suara, Api): VCC ke 5V Arduino, GND ke GND Arduino.
+   - Servo SG90: Merah (+) ke 6V (4x Baterai AA), Cokelat (-) ke GND Baterai AA.
+   - ESP-12E (NodeMCU): Gunakan Micro-USB terpisah ATAU 5V Arduino ke pin VIN NodeMCU (cabut Micro-USB jika pakai VIN).
+   - WAJIB: Satukan semua GND (GND Arduino + GND 4x Baterai AA + GND ESP-12E).
